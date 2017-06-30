@@ -363,7 +363,7 @@
     "website": "http://colivre.coop.br/",
     "regions": ["Worldwide"]
   },
-  { 
+  {
     "name": "Collabora",
     "website": "https://www.collabora.com/"
   },
@@ -384,7 +384,7 @@
     "website": "https://conversio.com/",
     "regions": ["Worldwide"]
   },
-  { 
+  {
     "name": "Core-Apps",
     "website": "http://www.core-apps.com/",
     "regions": ["USA"]
@@ -876,7 +876,7 @@
   },
   {
     "name": "IPS Group, Inc.",
-    "regions": "http://www.ipsgroupinc.com/"
+    "website": "http://www.ipsgroupinc.com/"
   },
   {
     "name": "iwantmyname",
