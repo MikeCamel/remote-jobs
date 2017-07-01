@@ -23,12 +23,12 @@ export class CompaniesComponent implements OnInit {
   constructor(private companiesService: CompaniesService) { }
 
   ngOnInit(): void {
-    this.getCompanies();
+    this.getAll();
   }
 
-  getCompanies(): void {
+  getAll(): void {
     this.companiesService
-      .getCompanies()
+      .getAll()
       .then(companies => {
         this.data = companies
       });

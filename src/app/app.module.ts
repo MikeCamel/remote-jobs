@@ -1,25 +1,42 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
+import {RouterModule, Routes} from '@angular/router';
 
-import { MaterialModule } from '@angular/material';
+import {MaterialModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { CovalentLayoutModule, CovalentStepsModule, CovalentDataTableModule, CovalentMessageModule } from '@covalent/core';
-import { CovalentHttpModule } from '@covalent/http';
-import { CovalentHighlightModule } from '@covalent/highlight';
-import { CovalentMarkdownModule } from '@covalent/markdown';
-import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
+import {
+  CovalentLayoutModule,
+  CovalentStepsModule,
+  CovalentDataTableModule,
+  CovalentMessageModule,
+  CovalentDialogsModule,
+  CovalentNotificationsModule
+} from '@covalent/core';
+import {CovalentHttpModule} from '@covalent/http';
+import {CovalentHighlightModule} from '@covalent/highlight';
+import {CovalentMarkdownModule} from '@covalent/markdown';
+import {CovalentDynamicFormsModule} from '@covalent/dynamic-forms';
 
-import { AppComponent } from './app.component';
-import { CompaniesComponent } from './companies/companies.component';
+import {AppComponent} from './app.component';
+import {CompaniesComponent} from './companies/companies.component';
+import {DetailsComponent} from './companies/details/details.component';
+
+const appRoutes: Routes = [
+  {path: '', component: CompaniesComponent},
+  {path: ':name', component: DetailsComponent},
+  {path: '**', component: CompaniesComponent}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    CompaniesComponent
+    CompaniesComponent,
+    DetailsComponent
   ],
   imports: [
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -32,9 +49,12 @@ import { CompaniesComponent } from './companies/companies.component';
     CovalentHttpModule.forRoot(),
     CovalentHighlightModule,
     CovalentMarkdownModule,
-    CovalentDynamicFormsModule
+    CovalentDynamicFormsModule,
+    CovalentDialogsModule,
+    CovalentNotificationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

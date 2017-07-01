@@ -6,13 +6,21 @@ import { CompanyModel } from './company.model';
 @Injectable()
 export class CompaniesService {
   private url = 'https://raw.githubusercontent.com/WeRockTech/remote-jobs/master/companies.json';
+  private details = 'https://raw.githubusercontent.com/WeRockTech/remote-jobs/master/company-profiles/';
 
   constructor(private http: Http) { }
 
-  getCompanies(): Promise<Array<CompanyModel>> {
+  getAll(): Promise<Array<CompanyModel>> {
     return this.http.get(this.url)
       .toPromise()
       .then(response => response.json() as Array<CompanyModel>)
+      .catch(this.handleError);
+  }
+
+  getDetails(uri: string): Promise<string> {
+    return this.http.get(`${this.details}${uri}`)
+      .toPromise()
+      .then(response => response['_body'])
       .catch(this.handleError);
   }
 
