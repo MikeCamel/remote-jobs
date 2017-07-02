@@ -6,6 +6,10 @@ Contributions are very welcome! Please read the [contribution guidelines](CONTRI
 
 Companies list is in `companies.json` and company details in the directory `company-profiles`.
 
+## Demo
+
+![Demo of company list and search and details](https://user-images.githubusercontent.com/624760/27768413-f82aa756-5f0a-11e7-8379-7c38310ab898.gif)
+
 ## Run Angular web app
 
 1. `npm install`
