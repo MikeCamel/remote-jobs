@@ -12,7 +12,8 @@ import {
   CovalentDataTableModule,
   CovalentMessageModule,
   CovalentDialogsModule,
-  CovalentNotificationsModule
+  CovalentNotificationsModule,
+  CovalentSearchModule
 } from '@covalent/core';
 import {CovalentHttpModule} from '@covalent/http';
 import {CovalentHighlightModule} from '@covalent/highlight';
@@ -53,7 +54,8 @@ const appRoutes: Routes = [
     CovalentMarkdownModule,
     CovalentDynamicFormsModule,
     CovalentDialogsModule,
-    CovalentNotificationsModule
+    CovalentNotificationsModule,
+    CovalentSearchModule
   ],
   providers: [
     CompaniesService
