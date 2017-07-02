@@ -1,19 +1,30 @@
-import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
-import { CompanyModel } from './company.model';
+import {CompanyModel} from './company.model';
 
 @Injectable()
 export class CompaniesService {
   private url = 'https://raw.githubusercontent.com/WeRockTech/remote-jobs/master/companies.json';
   private details = 'https://raw.githubusercontent.com/WeRockTech/remote-jobs/master/company-profiles/';
 
-  constructor(private http: Http) { }
+  companies: Array<CompanyModel> = [];
+
+  constructor(private http: Http) {
+  }
 
   getAll(): Promise<Array<CompanyModel>> {
+    console.log(this.companies.length);
+    if (this.companies.length > 0) {
+      return Promise.resolve(this.companies);
+    }
+
     return this.http.get(this.url)
       .toPromise()
-      .then(response => response.json() as Array<CompanyModel>)
+      .then((response) => {
+        this.companies = response.json() as Array<CompanyModel>;
+        return this.companies;
+      })
       .catch(this.handleError);
   }
 

@@ -23,6 +23,8 @@ import {AppComponent} from './app.component';
 import {CompaniesComponent} from './companies/companies.component';
 import {DetailsComponent} from './companies/details/details.component';
 
+import { CompaniesService } from './companies/companies.service';
+
 const appRoutes: Routes = [
   {path: '', component: CompaniesComponent},
   {path: ':name', component: DetailsComponent},
@@ -53,7 +55,9 @@ const appRoutes: Routes = [
     CovalentDialogsModule,
     CovalentNotificationsModule
   ],
-  providers: [],
+  providers: [
+    CompaniesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
