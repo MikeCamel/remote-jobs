@@ -14,7 +14,6 @@ export class CompaniesService {
   }
 
   getAll(): Promise<Array<CompanyModel>> {
-    console.log(this.companies.length);
     if (this.companies.length > 0) {
       return Promise.resolve(this.companies);
     }
