@@ -15,6 +15,6 @@ Companies list is in `companies.json` and company details in the directory `comp
 ## Deploy to GitHub Pages (GH Pages)
 
 ```bash
-$ ng build --prod --base-href "https://WeRockTech.github.io/remote-jobs/"
+$ ng build --prod --base-href "http://werocktech.com/remote-jobs/"
 $ ./node_modules/angular-cli-ghpages/bin/angular-cli-ghpages
 ```
