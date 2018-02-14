@@ -8,7 +8,7 @@ Red Hat creates, maintains, and contributes to many free software projects. It h
 
 ## Company size
 
-9300 employees (May 2016)
+12000 employees (Feb 2018)
 
 ## Remote status
 
